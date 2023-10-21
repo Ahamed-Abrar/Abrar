@@ -1,3 +1,36 @@
+button {
+  background-color: rgb(174, 174, 201);
+  color: rgb(243, 223, 223);
+  padding: 10px;
+  border-radius: 5px;
+}
+small {
+  font-size: 0.6em;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: none;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  padding: 20px;
+}
+
+
 .image-overlay {
   position: relative;
   width: 1024px;
@@ -11,6 +44,8 @@
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .image-overlay .text-overlay {
@@ -29,15 +64,20 @@
   opacity: 1;
 }
 
-.important-text {
-  color: white;
-  text-shadow: 0 0 5px white;
-  transition: all 0.5s ease-in-out;
+.image-overlay:hover img {
+  opacity: 0.5;
 }
 
-.important-text:hover {
-  text-shadow: none;
+.important-text {
+  color: red;
+  transition: color 7s ease-in-out;
 }
+
+/* Important text will go back to white color after 15 seconds */
+.important-text:hover {
+  color: white;
+}
+
 .image-overlay h2,
 .image-overlay h3,
 .image-overlay p {
@@ -45,11 +85,11 @@
 }
 
 .image-overlay:hover h2 {
-  transform: scale(1.2);
+  transform: translateX(340px);
 }
 
 .image-overlay:hover h3 {
-  transform: scale(1.1);
+  transform: translateX(400px);
 }
 
 .image-overlay:hover em {

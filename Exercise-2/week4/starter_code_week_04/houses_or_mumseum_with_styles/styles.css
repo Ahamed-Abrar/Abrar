@@ -36,6 +36,16 @@ small {
   width: 1024px;
   height: 799px;
   overflow: hidden;
+  margin: 0 auto;
+}
+
+image-overlay {
+  position: relative;
+  width: 1024px;
+  height: 799px;
+  overflow: hidden
+  margin: 0 auto;
+  align:left
 }
 
 .image-overlay img {
@@ -58,6 +68,8 @@ small {
   color: white;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
+  text-align: left;
+  max-width: 999px
 }
 
 .image-overlay:hover .text-overlay {
@@ -85,11 +97,11 @@ small {
 }
 
 .image-overlay:hover h2 {
-  transform: translateX(340px);
+  transform: translateX(center);
 }
 
 .image-overlay:hover h3 {
-  transform: translateX(400px);
+  transform: translateX(center);
 }
 
 .image-overlay:hover em {
@@ -101,6 +113,7 @@ small {
   animation: typing 1s steps(100, end);
 }
 
+
 @keyframes typing {
   from {
     opacity: 0;
@@ -109,4 +122,5 @@ small {
   to {
     opacity: 1;
   }
+  
 }

@@ -1,0 +1,62 @@
+body {
+  font-family: sans-serif;
+}
+
+header {
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+main {
+  padding: 20px;
+}
+
+#hero {
+  text-align: center;
+}
+
+#now-on-exhibition {
+  background-color: orange;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  flex: 1;
+}
+
+.right {
+  flex: 2;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+img {
+  max-width: 100%;
+}
+
+#newsletter {
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.fa {
+  font-size: 20px;
+  float: right;
+}

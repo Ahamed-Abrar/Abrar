@@ -1,0 +1,162 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #2F303A;
+  font-family: Poppins, sans-serif;
+  font-size: 1.2rem;
+  color: white;
+  min-height: 100vh;
+}
+
+.full-height-grow {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.25em;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand-logo-name {
+  margin-left: 1rem;
+}
+
+.main-nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav a {
+  color: inherit;
+  text-decoration: none;
+  padding: 1rem;
+}
+
+.main-nav a:hover {
+  color: #adadad;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 140px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+/* Custom style */
+
+/* Replace initial CSS with your custom styles */
+
+/* Grid container and image styling */
+
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
+  grid-gap: 1px 1px; /* Spacing between images */
+}
+
+.image-text-container {
+  position: relative;
+  overflow: hidden; /* Ensures animation stays within container */
+  margin: 1px; /* Creates grid gap around each image */
+  object-fit: cover;
+}
+
+.image-text-container img {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: ;
+}
+
+/* Figcaption styling and alignment */
+
+.image-text-container figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0; /* Ensures alignment with left edge */
+  z-index: 1;
+  width: 100%;
+  height: 80px; /* Adjust based on your image height */
+  white-space: nowrap;
+  overflow: hidden; /* Prevents captions from overflowing beyond container */
+  padding: 15px;
+  text-align: left;
+  transition: height 0.8s ease-in-out;
+}
+
+.image-text-container figcaption::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 20px);
+  background-color: rgba(104, 104, 104, 0.5);
+  z-index: -1;
+  padding: 15px;
+}
+
+.image-text-container figcaption p {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  width: 90%;
+  text-align: left;
+  white-space: wrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.8s ease-in-out, opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.image-text-container figcaption:hover {
+  height: 50%; /* Half the image height */
+}
+
+.image-text-container figcaption:hover p {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-270%); /* Only vertical movement, no scaling */
+}
+
+/* Additional styling for layout (optional) */
+
+.home-main-section {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+/* ... additional styles related to your layout ... */
+
+@keyframes growingText {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+
+

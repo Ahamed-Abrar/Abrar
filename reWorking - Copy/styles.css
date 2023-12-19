@@ -1,0 +1,210 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #2F303A;
+  font-family: Poppins, sans-serif;
+  font-size: 1.2rem;
+  color: white;
+  min-height: 100vh;
+}
+
+.full-height-grow {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.25em;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand-logo-name {
+  margin-left: 1rem;
+}
+
+.brand-logo-name {
+  font-weight: bold;
+}
+
+.main-nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav a {
+  color: inherit;
+  text-decoration: none;
+  padding: 1rem;
+}
+
+.main-nav a:hover {
+  color: #adadad;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 140px;
+}
+
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Option 1: Using pseudo-element styles */
+.image-text-container {
+  position: relative;
+  display: flex;
+  overflow: hidden; /* Ensures animation stays within container */
+  flex-direction: row; /* Arrange elements horizontally */
+  
+}
+
+
+.image-text-container {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  flex-direction: row;
+
+  /* Add a pseudo-element behind the content */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(115, 123, 141, 0.5); /* Red with 50% opacity */
+    z-index: 1; /* Place behind content */
+  }
+}
+
+
+.image-text-container img {
+  width: 100%; /* Adjust based on your desired image size */
+  height: 100%;
+}
+
+
+.image-text-container figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 362.28px; /* Replace with your desired width */
+  height: 80px; /* Adjust based on your image height */
+  white-space: nowrap;
+  overflow: hidden; /* Ensure full text display */
+  padding: 15px;
+  text-align: left;
+  transition: height 0.8s ease-in-out;
+}
+
+.image-text-container figcaption::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 20px);
+  background-color: rgba(253, 167, 167, 0.2);
+  z-index: -1;
+  padding: 15px;
+}
+
+.image-text-container figcaption p {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  width: 100%;
+  text-align: left;
+  white-space: wrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.8s ease-in-out, opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.image-text-container figcaption:hover {
+  height: 100%; /* Half the image height */
+}
+
+.image-text-container figcaption:hover p {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-50%); /* Only vertical movement, no scaling */
+}
+
+@keyframes growingText {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10%);
+  }
+}
+
+.grid-container {
+  margin: 0px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-gap: 10px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item {
+  /* padding: 0 0 16px 0; */
+  /* border-radius: 8px; */
+  /* border: 2px solid black; */
+}
+
+
+
+.image-text-container {
+  position: relative;
+  display: flex;
+  overflow: hidden; /* Ensures animation stays within container */
+  flex-direction: row; /* Arrange elements horizontally */
+  **width: 330px;** /* Increase the width here */
+}
+
+/* remove if conflicting */
+
+@media only screen and (max-width: 768px) {
+  .image-text-container {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .image-text-container figcaption {
+    width: 100%;
+    height: 50px;
+    padding: 5px;
+  }
+}
+
+
